@@ -26,6 +26,9 @@ At least one device must be specified:
 
 ```
 class { '::raw':
-  devices = { '1' => 'hdb1' }
+  devices => {
+               '1' => { raw_device => 'hdb1' },
+               '2' => { raw_device => 'hdb2' }
+             }
 }
 ```

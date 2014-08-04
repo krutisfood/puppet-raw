@@ -2,7 +2,7 @@
 class raw (
   $ensure  = $raw::params::ensure,
   $enable  = $raw::params::enable,
-  $devices = ''
+  $devices = {}
 ) inherits raw::params {
 
   validate_hash($devices)
