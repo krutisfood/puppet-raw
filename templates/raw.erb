@@ -1,0 +1,17 @@
+###################################
+# ! This file managed by Puppet ! #
+###################################
+# /etc/raw 
+# 
+# The format of this file is:
+# raw<N>:<blockdev>
+#     
+# example:
+# ---------   
+# raw1:hdb1
+#
+# this means: bind /dev/raw/raw1 to /dev/hdb1
+#   
+# ... 
+<% @raw_devices.sort.each do |number,device| %>
+raw<%= number -%>:<%= device -%><% end -%>
