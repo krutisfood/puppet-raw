@@ -1,0 +1,14 @@
+# VI Swap files
+*swp
+*~
+
+
+# IDE files
+*.iml
+.idea
+.settings
+.DS_Store
+.project
+
+# Modules directory is to be managed and used by the Puppetfile with r10k (or puppet-librarian)
+modules
