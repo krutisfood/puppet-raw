@@ -12,7 +12,6 @@ The raw module handles installing, configuring, and running raw devices.
 
 ### What raw affects
 
-* raw package.
 * raw configuration file.
 * raw service.
 
