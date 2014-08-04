@@ -13,5 +13,5 @@
 # this means: bind /dev/raw/raw1 to /dev/hdb1
 #   
 # ... 
-<% @raw_devices.sort.each do |number,device| %>
+<% @devices.sort.each do |number,device| %>
 raw<%= number -%>:<%= device['raw_device'] -%><% end -%>
