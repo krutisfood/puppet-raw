@@ -15,7 +15,7 @@ class raw (
       owner   => root,
       group   => root,
       mode    => '0644',
-      content => template('raw.erb');
+      content => template('raw/raw.erb');
   }
 
   service {
