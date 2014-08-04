@@ -32,3 +32,13 @@ class { '::raw':
              }
 }
 ```
+###How do I remove it?
+
+```
+class { '::raw':
+  ensure  => 'absent',
+  devices => {
+               '1' => { raw_device => 'hdb1' },
+             }
+}
+```

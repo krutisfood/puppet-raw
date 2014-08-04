@@ -9,6 +9,11 @@ class raw (
   validate_string($ensure)
   validate_bool($enable)
 
+  $service_ensure = $ensure ? {
+    'present' => 'running',
+    default   => 'stopped
+  }
+
   file {
     '/etc/raw':
       ensure  => $ensure,
@@ -20,7 +25,7 @@ class raw (
 
   service {
     'raw':
-      ensure      => $ensure,
+      ensure      => $service_ensure,
       enable      => $enable,
       hasrestart  => false,
       stop        => '/bin/bash -c "echo It does not really have stop, only start"',
