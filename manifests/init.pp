@@ -11,7 +11,7 @@ class raw (
 
   $service_ensure = $ensure ? {
     'present' => 'running',
-    default   => 'stopped
+    default   => 'stopped'
   }
 
   file {
