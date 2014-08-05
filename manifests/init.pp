@@ -15,8 +15,8 @@ class raw (
   }
 
   anchor { 'raw::begin': } ->
-  include raw::config ~>
-  include raw::service 
-  anchor { 'raw::end': } ->
+  class { 'raw::config': } ~>
+  class { 'raw::service': } ->
+  anchor { 'raw::end': }
 
 }
