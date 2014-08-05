@@ -14,21 +14,9 @@ class raw (
     default   => 'stopped'
   }
 
-  file {
-    '/etc/raw':
-      ensure  => $ensure,
-      owner   => root,
-      group   => root,
-      mode    => '0644',
-      content => template('raw/raw.erb');
-  }
+  anchor { 'raw::begin': } ->
+  include raw::config ~>
+  include raw::service 
+  anchor { 'raw::end': } ->
 
-  service {
-    'raw':
-      ensure      => $service_ensure,
-      enable      => $enable,
-      hasrestart  => false,
-      stop        => '/bin/bash -c "echo It does not really have stop, only start"',
-      subscribe   => [File['/etc/raw']];
-  }
 }
